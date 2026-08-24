@@ -12,13 +12,13 @@ class Solution {
                 low = mid+1;
             }
         }
-        return mid;
+        return low;
     }
     public int searchInsert(int[] nums, int target) {
         int result = bin(nums,0,nums.length-1,target);
-        if (nums[result]<target){
-            return result+1;
-        }
+        // if (nums[result]<target){
+        //     return result+1;
+        // }
         return result;
     }
 }
