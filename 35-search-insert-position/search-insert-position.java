@@ -19,6 +19,7 @@ class Solution {
         // if (nums[result]<target){
         //     return result+1;
         // }
+        // use this if returning mid 
         return result;
     }
 }
