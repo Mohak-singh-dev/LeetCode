@@ -10,12 +10,17 @@
  */
 class Solution {
     private int GCD(int a,int b){
-        while (a!=b){
-            if(a<b){
-                b-=a;
-            }else{
-                a-=b;
-            }
+        // while (a!=b){
+        //     if(a<b){
+        //         b-=a;
+        //     }else{
+        //         a-=b;
+        //     }
+        // }
+         while(b != 0){
+            int temp = b;
+            b = a % b;
+            a = temp;
         }
         return a;
     }
