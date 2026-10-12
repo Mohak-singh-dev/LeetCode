@@ -1,16 +1,11 @@
 class Solution {
     public int maxDistinct(String s) {
-        int count=0;
-        HashMap<Character,Integer> map = new HashMap<>();
-        for(int i=0;i<s.length();i++){
-            char c = s.charAt(i);
-            map.put(c,1);
+        int[] hash = new int[26];
+        int ans = 0;
+        for(int i = 0; i < s.length(); i++) hash[s.charAt(i) - 'a']++;
+        for(int i = 0; i < 26; i++) {
+            if(hash[i] != 0) ans++;
         }
-        // for(Map.Entry<Character,Integer> e: map.entrySet()){
-        //     if (e.getValue() == 1){
-        //         count++;
-        //     }
-        // }
-        return map.size();
+        return ans;
     }
 }
