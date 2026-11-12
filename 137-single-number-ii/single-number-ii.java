@@ -1,16 +1,13 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        HashMap<Integer,Integer> map = new HashMap<>();
-        int res=0;
-        for (int i: nums){
-            map.merge(i,1,(o,n)->o+n);
+        int ones = 0;
+        int twos = 0;
+
+        for (final int num : nums) {
+          ones ^= (num & ~twos);
+          twos ^= (num & ~ones);
         }
-        for (int j: map.keySet()){
-            if (map.get(j)==1){
-                res = j;
-                break;
-            }
-        }
-        return res;
+
+        return ones;
     }
 }
